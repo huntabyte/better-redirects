@@ -8,7 +8,7 @@
 <main class="container">
 	<nav>
 		<ul>
-			<li><strong>My App</strong></li>
+			<li><strong><a href="/">My App</a></strong></li>
 		</ul>
 		<form action="/logout" method="POST">
 			<ul>
