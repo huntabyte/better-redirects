@@ -1,3 +1,4 @@
+import { dev } from "$app/environment"
 import type { RequestEvent } from "@sveltejs/kit"
 
 export const authenticateUser = (event: RequestEvent) => {
@@ -19,4 +20,14 @@ export const authenticateUser = (event: RequestEvent) => {
 	}
 
 	return null
+}
+
+export const loginUser = (event: RequestEvent) => {
+	event.cookies.set("auth", "regularusertoken", {
+		path: "/",
+		httpOnly: true,
+		maxAge: 60 * 60 * 24 * 7,
+		secure: dev ? false : true,
+		sameSite: "strict"
+	})
 }

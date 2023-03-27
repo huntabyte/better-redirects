@@ -1,5 +1,6 @@
 <script lang="ts">
 	import "@picocss/pico"
+	import "../app.css"
 
 	export let data
 </script>

@@ -1,25 +1,23 @@
-<article>
-    <header>
-        <h1>Login</h1>
-    </header>
-    <form method="POST">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email"  required>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password"  required>
-        <button type="submit">Login</button>
-    </form>
-</article>
+<script lang="ts">
+	import { page } from "$app/stores"
 
-<style>
-    article {
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 40px;
-    }
-    h1 {
-        margin-bottom: 0;
-        
-    }
-</style>
+	let message: string
+
+	$: message = $page.url.searchParams.get("message") ?? ""
+</script>
+
+{#if message}
+	<p class="alert">{message}</p>
+{/if}
+<article>
+	<header>
+		<h1>Login</h1>
+	</header>
+	<form method="POST">
+		<label for="email">Email</label>
+		<input type="email" id="email" name="email" required />
+		<label for="password">Password</label>
+		<input type="password" id="password" name="password" required />
+		<button type="submit">Login</button>
+	</form>
+</article>

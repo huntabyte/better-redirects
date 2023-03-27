@@ -13,7 +13,7 @@ module.exports = {
 			files: "**/*.svelte",
 			options: {
 				parser: "svelte",
-				svelteSortOrder: "scripts-styles-markup",
+				svelteSortOrder: "scripts-markup-styles",
 				svelteStrictMode: false,
 				svelteBracketNewLine: false,
 				svelteAllowShorthand: true,
